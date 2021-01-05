@@ -31,7 +31,7 @@ post '/callbacks/inboundCall' do
     body = ApiCreateCallRequest.new
     body.from = BANDWIDTH_PHONE_NUMBER
     body.to = MASKED_PHONE_NUMBER 
-    body.answer_url = BASE_URL + '/outboundCall' 
+    body.answer_url = BASE_URL + '/callbacks/outboundCall' 
     body.application_id = BANDWIDTH_VOICE_APPLICATION_ID
     body.tag = callback_data['callId']
 
@@ -50,7 +50,7 @@ post '/callbacks/inboundCall' do
     return response.to_bxml()
 end
 
-post '/outboundCall' do
+post '/callbacks/outboundCall' do
     callback_data = JSON.parse(request.body.read)
 
     response = Bandwidth::Voice::Response.new()
