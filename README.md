@@ -28,7 +28,7 @@ For more information about API credentials see [here](https://dev.bandwidth.com/
 The sample app uses the below environmental variables.
 ```java
 BW_ACCOUNT_ID                 // Your Bandwidth Account Id
-fdas                   // Your Bandwidth API Token
+BW_USERNAME                   // Your Bandwidth API Token
 BW_PASSWORD                   // Your Bandwidth API Secret
 INBOUND_NUMBER               // Your Bandwidth Phone Number
 BANDWIDTH_VOICE_APPLICATION_ID       // Your Voice Application Id created in the dashboard
