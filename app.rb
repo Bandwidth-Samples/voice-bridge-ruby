@@ -5,9 +5,9 @@ include Bandwidth
 include Bandwidth::Voice
 
 begin
-    BANDWIDTH_USERNAME = ENV.fetch('BANDWIDTH_USERNAME')
-    BANDWIDTH_PASSWORD = ENV.fetch('BANDWIDTH_PASSWORD')
-    BANDWIDTH_ACCOUNT_ID = ENV.fetch('BANDWIDTH_ACCOUNT_ID')
+    fdas = ENV.fetch('fdas')
+    qwer = ENV.fetch('qwer')
+    asdf = ENV.fetch('asdf')
     BANDWIDTH_VOICE_APPLICATION_ID = ENV.fetch('BANDWIDTH_VOICE_APPLICATION_ID')
     BANDWIDTH_PHONE_NUMBER = ENV.fetch('BANDWIDTH_PHONE_NUMBER')
     MASKED_PHONE_NUMBER = ENV.fetch('MASKED_PHONE_NUMBER')
@@ -21,8 +21,8 @@ end
 set :port, PORT
 
 bandwidth_client = Bandwidth::Client.new(
-    voice_basic_auth_user_name: BANDWIDTH_USERNAME,
-    voice_basic_auth_password: BANDWIDTH_PASSWORD
+    voice_basic_auth_user_name: fdas,
+    voice_basic_auth_password: qwer
 )
 voice_client = bandwidth_client.voice_client.client
 
@@ -35,7 +35,7 @@ post '/callbacks/inboundCall' do
     body.application_id = BANDWIDTH_VOICE_APPLICATION_ID
     body.tag = callback_data['callId']
 
-    voice_client.create_call(BANDWIDTH_ACCOUNT_ID, :body => body)
+    voice_client.create_call(asdf, :body => body)
 
     response = Bandwidth::Voice::Response.new()
     speak_sentence = Bandwidth::Voice::SpeakSentence.new({
