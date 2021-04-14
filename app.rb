@@ -50,7 +50,7 @@ post '/callbacks/inboundCall' do
     return response.to_bxml()
 end
 
-post '/outboundCall' do
+post '/callbacks/outboundCall' do
     callback_data = JSON.parse(request.body.read)
 
     response = Bandwidth::Voice::Response.new()
