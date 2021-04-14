@@ -8,7 +8,7 @@ begin
     BW_USERNAME = ENV.fetch('BW_USERNAME')
     BW_PASSWORD = ENV.fetch('BW_PASSWORD')
     BW_ACCOUNT_ID = ENV.fetch('BW_ACCOUNT_ID')
-    BANDWIDTH_VOICE_APPLICATION_ID = ENV.fetch('BANDWIDTH_VOICE_APPLICATION_ID')
+    BW_VOICE_APPLICATION_ID = ENV.fetch('BW_VOICE_APPLICATION_ID')
     INBOUND_NUMBER = ENV.fetch('INBOUND_NUMBER')
     OUTBOUND_NUMBER = ENV.fetch('OUTBOUND_NUMBER')
     LOCAL_PORT = ENV.fetch('LOCAL_PORT')
@@ -32,7 +32,7 @@ post '/callbacks/inboundCall' do
     body.from = INBOUND_NUMBER
     body.to = OUTBOUND_NUMBER 
     body.answer_url = BASE_CALLBACK_URL + '/outboundCall' 
-    body.application_id = BANDWIDTH_VOICE_APPLICATION_ID
+    body.application_id = BW_VOICE_APPLICATION_ID
     body.tag = callback_data['callId']
 
     voice_client.create_call(BW_ACCOUNT_ID, :body => body)
