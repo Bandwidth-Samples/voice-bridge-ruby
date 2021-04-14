@@ -6,36 +6,36 @@ include Bandwidth::Voice
 
 begin
     fdas = ENV.fetch('fdas')
-    qwer = ENV.fetch('qwer')
-    asdf = ENV.fetch('asdf')
+    BW_PASSWORD = ENV.fetch('BW_PASSWORD')
+    BW_ACCOUNT_ID = ENV.fetch('BW_ACCOUNT_ID')
     BANDWIDTH_VOICE_APPLICATION_ID = ENV.fetch('BANDWIDTH_VOICE_APPLICATION_ID')
-    BANDWIDTH_PHONE_NUMBER = ENV.fetch('BANDWIDTH_PHONE_NUMBER')
-    MASKED_PHONE_NUMBER = ENV.fetch('MASKED_PHONE_NUMBER')
-    PORT = ENV.fetch('PORT')
-    BASE_URL = ENV.fetch('BASE_URL')
+    INBOUND_NUMBER = ENV.fetch('INBOUND_NUMBER')
+    OUTBOUND_NUMBER = ENV.fetch('OUTBOUND_NUMBER')
+    LOCAL_PORT = ENV.fetch('LOCAL_PORT')
+    BASE_CALLBACK_URL = ENV.fetch('BASE_CALLBACK_URL')
 rescue
     puts "Please set the environmental variables defined in the README"
     exit(-1)
 end
 
-set :port, PORT
+set :port, LOCAL_PORT
 
 bandwidth_client = Bandwidth::Client.new(
     voice_basic_auth_user_name: fdas,
-    voice_basic_auth_password: qwer
+    voice_basic_auth_password: BW_PASSWORD
 )
 voice_client = bandwidth_client.voice_client.client
 
 post '/callbacks/inboundCall' do
     callback_data = JSON.parse(request.body.read)
     body = ApiCreateCallRequest.new
-    body.from = BANDWIDTH_PHONE_NUMBER
-    body.to = MASKED_PHONE_NUMBER 
-    body.answer_url = BASE_URL + '/outboundCall' 
+    body.from = INBOUND_NUMBER
+    body.to = OUTBOUND_NUMBER 
+    body.answer_url = BASE_CALLBACK_URL + '/outboundCall' 
     body.application_id = BANDWIDTH_VOICE_APPLICATION_ID
     body.tag = callback_data['callId']
 
-    voice_client.create_call(asdf, :body => body)
+    voice_client.create_call(BW_ACCOUNT_ID, :body => body)
 
     response = Bandwidth::Voice::Response.new()
     speak_sentence = Bandwidth::Voice::SpeakSentence.new({
