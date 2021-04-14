@@ -31,7 +31,7 @@ post '/callbacks/inboundCall' do
     body = ApiCreateCallRequest.new
     body.from = INBOUND_NUMBER
     body.to = OUTBOUND_NUMBER 
-    body.answer_url = BASE_CALLBACK_URL + '/outboundCall' 
+    body.answer_url = BASE_CALLBACK_URL + '/callbacks/outboundCall' 
     body.application_id = BW_VOICE_APPLICATION_ID
     body.tag = callback_data['callId']
 
