@@ -26,7 +26,7 @@ For more information about API credentials see [here](https://dev.bandwidth.com/
 
 # Environmental Variables
 The sample app uses the below environmental variables.
-```java
+```sh
 BW_ACCOUNT_ID                 # Your Bandwidth Account Id
 BW_USERNAME                   # Your Bandwidth API Token
 BW_PASSWORD                   # Your Bandwidth API Secret
