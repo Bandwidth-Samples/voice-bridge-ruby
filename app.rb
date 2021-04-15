@@ -9,7 +9,7 @@ begin
     BW_PASSWORD = ENV.fetch('BW_PASSWORD')
     BW_ACCOUNT_ID = ENV.fetch('BW_ACCOUNT_ID')
     BW_VOICE_APPLICATION_ID = ENV.fetch('BW_VOICE_APPLICATION_ID')
-    INBOUND_NUMBER = ENV.fetch('INBOUND_NUMBER')
+    BW_NUMBER = ENV.fetch('BW_NUMBER')
     OUTBOUND_NUMBER = ENV.fetch('OUTBOUND_NUMBER')
     LOCAL_PORT = ENV.fetch('LOCAL_PORT')
     BASE_CALLBACK_URL = ENV.fetch('BASE_CALLBACK_URL')
@@ -29,7 +29,7 @@ voice_client = bandwidth_client.voice_client.client
 post '/callbacks/inboundCall' do
     callback_data = JSON.parse(request.body.read)
     body = ApiCreateCallRequest.new
-    body.from = INBOUND_NUMBER
+    body.from = BW_NUMBER
     body.to = OUTBOUND_NUMBER 
     body.answer_url = BASE_CALLBACK_URL + '/callbacks/outboundCall' 
     body.application_id = BW_VOICE_APPLICATION_ID
