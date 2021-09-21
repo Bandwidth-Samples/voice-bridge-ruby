@@ -1,2 +1,8 @@
 gem 'bandwidth-sdk'
 gem 'sinatra'
+gem 'reel'
+gem 'http'
+gem 'puma'
+gem 'webrick'
+gem 'thin'
+source 'https://rubygems.org'
