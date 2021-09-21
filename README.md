@@ -27,14 +27,14 @@ For more information about API credentials see [here](https://dev.bandwidth.com/
 # Environmental Variables
 The sample app uses the below environmental variables.
 ```sh
-BW_ACCOUNT_ID                 # Your Bandwidth Account Id
-BW_USERNAME                   # Your Bandwidth API Token
-BW_PASSWORD                   # Your Bandwidth API Secret
-BW_NUMBER                     # Your Bandwidth Phone Number
-BW_VOICE_APPLICATION_ID       # Your Voice Application Id created in the dashboard
-OUTBOUND_NUMBER               # The private phone number to receive the masked call
-BASE_CALLBACK_URL             # Your public base url
-LOCAL_PORT                    # The port number you wish to run the sample on
+BW_ACCOUNT_ID               	     # Your Bandwidth Account Id
+BW_USERNAME                  	     # Your Bandwidth API Token
+BW_PASSWORD                  	     # Your Bandwidth API Password
+BW_NUMBER                            # Your Bandwidth Phone Number
+USER_NUMBER                          # The user's phone number involved with this application
+BW_VOICE_APPLICATION_ID  	     # Your Voice Application Id created in the dashboard
+BASE_CALLBACK_URL         	     # Your public base url
+LOCAL_PORT                	     # The port number you wish to run the sample on
 ```
 
 # Callback URLs
