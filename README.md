@@ -32,9 +32,9 @@ BW_USERNAME                  	     # Your Bandwidth API Token
 BW_PASSWORD                  	     # Your Bandwidth API Password
 BW_NUMBER                            # Your Bandwidth Phone Number
 USER_NUMBER                          # The user's phone number involved with this application
-BW_VOICE_APPLICATION_ID  	     # Your Voice Application Id created in the dashboard
-BASE_CALLBACK_URL         	     # Your public base url
-LOCAL_PORT                	     # The port number you wish to run the sample on
+BW_VOICE_APPLICATION_ID  	         # Your Voice Application Id created in the dashboard
+BASE_CALLBACK_URL         	         # Your public base url
+LOCAL_PORT                	         # The port number you wish to run the sample on
 ```
 
 # Callback URLs
