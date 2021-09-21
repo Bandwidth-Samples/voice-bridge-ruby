@@ -28,7 +28,7 @@ For more information about API credentials see [here](https://dev.bandwidth.com/
 The sample app uses the below environmental variables.
 ```sh
 BW_ACCOUNT_ID               	     # Your Bandwidth Account Id
-BW_USERNAME                  	     # Your Bandwidth API Token
+BW_USERNAME                  	     # Your Bandwidth API Username
 BW_PASSWORD                  	     # Your Bandwidth API Password
 BW_NUMBER                            # Your Bandwidth Phone Number
 USER_NUMBER                          # The user's phone number involved with this application
