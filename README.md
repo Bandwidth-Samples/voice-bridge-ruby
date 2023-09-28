@@ -20,9 +20,9 @@ In the Bandwidth Dashboard, set the Application's `Call initiated callback URL` 
 
 Once the callee at `USER_NUMBER` confirms the call, the call flow will appear as such:
 
-`Random Number <-> BW_NUMBER <-> USER_NUMBER` if the `BW_NUMBER` environment variable is the number called.
+`Random Number <-> BW_NUMBER <-> USER_NUMBER` - if the `BW_NUMBER` environment variable is the number called.
 
-`Random Number <-> Other BW_NUMBER <-> BW_NUMBER <-> USER_NUMBER` if the `BW_NUMBER` environment variable is different from the number called.
+`Random Number <-> Other BW_NUMBER <-> BW_NUMBER <-> USER_NUMBER` - if the `BW_NUMBER` environment variable is different from the number called.
 
 # Pre-Requisites
 
