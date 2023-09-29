@@ -47,7 +47,7 @@ post '/callbacks/outboundCall' do
 
   speak_sentence = Bandwidth::Bxml::SpeakSentence.new('Hold while we connect you. We will begin to bridge you now.')
   bridge = Bandwidth::Bxml::Bridge.new(data['tag'])
-
   response = Bandwidth::Bxml::Response.new([speak_sentence, bridge])
+
   return response.to_bxml
 end
